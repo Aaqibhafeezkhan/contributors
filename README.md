@@ -28,11 +28,11 @@
   | <a href="https://github.com/YOUR_USERNAME"><img src="https://github.com/YOUR_USERNAME.png?size=40" alt="YOUR_USERNAME" width="40" height="40"></a> | [Your Name](https://github.com/YOUR_USERNAME) | [org/repo](https://github.com/org/repo) |
 -->
 
-|                                                                                                          | Name                                                   | Main Project                                                                |
-| :------------------------------------------------------------------------------------------------------: | ------------------------------------------------------ | --------------------------------------------------------------------------- |
-| <a href="https://github.com/francescobianco"><img src="https://github.com/francescobianco.png?size=40" alt="francescobianco" width="40" height="40"></a> | [Francesco Bianco](https://github.com/francescobianco) | [openapi/contributors](https://github.com/openapi/contributors)             |
+| | Name | Main Project |
+| :---: | --- | --- |
+| <a href="https://github.com/francescobianco"><img src="https://github.com/francescobianco.png?size=40" alt="francescobianco" width="40" height="40"></a> | [Francesco Bianco](https://github.com/francescobianco) | [openapi/contributors](https://github.com/openapi/contributors) |
 | <a href="https://github.com/kevin-lozada-santos"><img src="https://github.com/kevin-lozada-santos.png?size=40" alt="kevin-lozada-santos" width="40" height="40"></a> | [Kevin Lozada Santos](https://github.com/kevin-lozada-santos) | [openapi/discussions](https://github.com/openapi/discussions) |
-|     <a href="https://github.com/Deadpool2000"><img src="https://github.com/Deadpool2000.png?size=40" alt="Deadpool2000" width="40" height="40"></a>      | [Salil M](https://github.com/Deadpool2000)             | [openapi/openapi-python-sdk](https://github.com/openapi/openapi-python-sdk) |
-|  <a href="https://github.com/Seraphim200001"><img src="https://github.com/Seraphim200001.png?size=40" alt="Seraphim200001" width="40" height="40"></a>   | [Seraphim200001](https://github.com/Seraphim200001)    | [openapi/openapi-php-sdk](https://github.com/openapi/openapi-php-sdk)       |
+| <a href="https://github.com/Deadpool2000"><img src="https://github.com/Deadpool2000.png?size=40" alt="Deadpool2000" width="40" height="40"></a> | [Salil M](https://github.com/Deadpool2000) | [openapi/openapi-python-sdk](https://github.com/openapi/openapi-python-sdk) |
+| <a href="https://github.com/Seraphim200001"><img src="https://github.com/Seraphim200001.png?size=40" alt="Seraphim200001" width="40" height="40"></a> | [Seraphim200001](https://github.com/Seraphim200001) | [openapi/openapi-php-sdk](https://github.com/openapi/openapi-php-sdk) |
 
 <!-- END OF CONTRIBUTORS LIST - add your row above this line -->
