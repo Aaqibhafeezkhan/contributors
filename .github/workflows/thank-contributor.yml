@@ -1,0 +1,71 @@
+name: Thank new contributor
+
+# Runs when a Pull Request is merged into this repository and posts a
+# thank-you comment inviting the new contributor to share their experience.
+#
+# `pull_request_target` is used so the workflow can comment on PRs opened
+# from forks. It is safe here because the PR code is never checked out.
+on:
+  pull_request_target:
+    types: [closed]
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  thank:
+    if: github.event.pull_request.merged == true && github.event.pull_request.user.type != 'Bot'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post thank-you comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- openapi-contributors:thank-you -->';
+            const { owner, repo } = context.repo;
+            const pr = context.payload.pull_request;
+            const login = pr.user.login;
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner, repo, issue_number: pr.number,
+            });
+            if (comments.some(c => c.body && c.body.includes(marker))) {
+              core.info('Thank-you comment already posted, skipping.');
+              return;
+            }
+
+            const body = `${marker}
+            ## 🎉 Welcome aboard, @${login}!
+
+            Thank you for joining the **Openapi® Contributors**! Your Pull Request has been merged and you are now officially part of the Openapi® ecosystem. 💜
+
+            ### 📣 Tell the world!
+
+            We'd love for you to share your experience:
+
+            - 🗣️ Tell your **friends and colleagues** about it
+            - ✍️ Write a **post on your social networks** (LinkedIn, X, Mastodon, Bluesky…) or an **article on your blog**
+            - 🔗 **Leave the links to your posts in a comment right below** — we will reshare them on our official social channels!
+
+            ### 🏅 Weekly recognition
+
+            Every week the **Openapi Pulse** thanks our contributors with a **badge in the Pulse section** of our organization page. You have just joined the queue and will be featured in one of the upcoming editions — keep an eye on it here:
+            👉 https://github.com/openapi#user-content--connect-with-us
+
+            ### ⭐ Stay connected
+
+            Don't forget to **follow our organization** on GitHub to stay up to date: 👉 https://github.com/openapi
+
+            And if you haven't done it yet, add the badge to your profile README:
+
+            \`\`\`md
+            [![Openapi® Contributor](https://img.shields.io/badge/Openapi%C2%AE-Contributor-753f8b)](https://github.com/openapi/contributors)
+            \`\`\`
+
+            Thanks again for being part of the community! 🚀
+            — The Openapi® Team`;
+
+            await github.rest.issues.createComment({
+              owner, repo, issue_number: pr.number, body,
+            });
